@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+  color: wheat;
+}
+
+h1 {
+  color: beige;
+}
+
+.top-para {
+  font-size: 1.2rem;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("/images/bg4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-container {
+  height: 50vh;
+  margin-top: 50px;
+  width: 40vw;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 13% 15%;
+}
+
+.form-container form input {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  padding: 4px 15px;
+  color: black;
+  text-transform: capitalize;
+}
+
+.form-container form input:focus {
+  outline: none;
+}
+
+button {
+  padding: 2% 20%;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(0.95);
+  transition: all ease 0.3s;
+  background-color: grey;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* result css */
+
+.result-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* background-color: blueviolet; */
+}
+
+.weather-container {
+  height: 92%;
+  width: 100%;
+  /* background-color: bisque; */
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 10%;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.top-container {
+  width: 100%;
+  height: 16%;
+  /* background-color: aquamarine; */
+  padding-left: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.middle-container {
+  width: 100%;
+  height: 38%;
+  /* background-color: aquamarine; */
+  display: flex;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+
+.main-temp {
+  font-size: 90px;
+}
+
+.main-description {
+  font-size: 1.5rem;
+}
+
+.cloud-temp {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cloud-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80%;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud-image img {
+    height: 100%;
+    width: 95%;
+}
+
+.temp-data {
+  width: 50%;
+  padding: 1.5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  border-left: 2px solid rgba(241, 236, 236, 0.808);
+}
+
+.temp {
+  width: 30%;
+}
+
+.temp h2 {
+  letter-spacing: 1px;
+}
+
+.bottom-mid-para {
+  font-size: 1.2rem;
+}
+
+.bottom-container {
+  width: 100%;
+  height: 32%;
+  /* background-color: aquamarine; */
+  display: flex;
+  padding: 0.7%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow-x: auto;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.content {
+    height: 100%;
+    width: 80px;
+    /* background-color: burlywood; */
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    border-radius: 10px;
+}
+
+.content-img {
+    height: 38%;
+    width: 80%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.content p {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.bottom-container::-webkit-scrollbar{
+    color: transparent;
+    height: 0;
+}
+
+

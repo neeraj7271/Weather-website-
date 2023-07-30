@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather application</title>
+        <link rel="stylesheet" href="/styles/style.css">
+    </head>
+    <body>
+
+        <div class="result-container">
+
+            <div class="weather-container">
+
+
+                <div class="top-container">
+
+                    <% if (locals.city && locals.country && locals.weekday && locals.date && locals.month) { %>
+                        <h1>
+                            <%= city %>,
+                            <%= country %>
+                        </h1>
+                        <p class="top-para">
+                            <%= weekday %>
+                            <%= date %>
+                            <%= month %>
+                        </p>
+                    <% } else { %>
+
+                        <% if (locals.error) { %>
+                            <p>
+                                <%= error %>
+                            </p>
+                        <% } %>
+                    <% } %>
+                </div>
+
+
+                <div class="middle-container">
+
+
+                    <div class="cloud-temp">
+
+                        <% if (locals.currtemp && locals.currdes && locals.curricon) { %>
+
+                            <div class="cloud-image">
+                                <img src=<%= curricon %> alt="">
+                            </div>
+                            <div class="main-temperature">
+                                <h1 class="main-temp">
+                                    <%= currtemp %>
+                                    &deg;</h1>
+                                <p class="main-description">
+                                    <%= currdes %>
+                                </p>
+                            </div>
+
+                        <% } else { %>
+
+                            <% if (locals.error) { %>
+                                <p>
+                                    <%= error %>
+                                </p>
+                            <% } %>
+                        <% } %>
+
+
+                    </div>
+
+
+                    <% if (locals.highest && locals.windSpeed && locals.sunriseTime && locals.lowest && locals.rainChance && locals.sunsetTime) { %>
+
+
+                    <div class="temp-data">
+
+                            <div class="temp">
+                                <h2> <%= highest %>&deg;  </h2>
+                                <p>High</p>
+                            </div>
+                            <div class="temp">
+                                <h2> <%= windSpeed %>mph</h2>
+                                <p>Wind</p>
+                            </div>
+                            <div class="temp">
+                                <h2> <%= sunriseTime %> </h2>
+                                <p>Sunrise</p>
+                            </div>
+                            <div class="temp">
+                                <h2><%= lowest %>&deg;</h2>
+                                <p>Low</p>
+                            </div>
+                            <div class="temp">
+                                <h2><%= rainChance %>%</h2>
+                                <p>Rain</p>
+                            </div>
+                            <div class="temp">
+                                <h2><%= sunsetTime %></h2>
+                                <p>Sunset</p>
+                            </div>
+                        </div>
+    
+
+                        <% } else { %>
+
+                            <% if (locals.error) { %>
+                                <p>
+                                    <%= error %>
+                                </p>
+                            <% } %>
+                        <% } %>
+
+                       
+                </div>
+                <p class="bottom-mid-para
+                                ">Today's Weather</p>
+
+
+
+                
+                <div class="bottom-container">
+                    
+                    <% if (locals.hours) { %>
+
+                       
+                        <% hours.forEach(hour => { %>
+                            <div class="content">
+
+                            
+
+                            <p> <%= hour.time.substring(11, 16) %></p>
+                            <div class="content-img">
+                                <img src= <%= hour.condition.icon %>  alt="">
+                            </div>
+                            <p><%= hour.temp_c %>&deg;</p>
+                            
+                        </div>
+                        <% }); %>
+
+
+                       
+                     
+                    <% } else { %>
+
+                        <% if (locals.error) { %>
+                            <p>
+                                <%= error %>
+                            </p>
+                        <% } %>
+                    <% } %>
+
+                   
+
+
+
+                </div>
+                    <!-- <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/116.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/119.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/122.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/143.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/176.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/179.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/182.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/185.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/200.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/227.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/230.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div>
+                    <div class="content">
+                        <p>5pm</p>
+                        <div class="content-img">
+                            <img src="/images/248.png" alt="">
+                        </div>
+                        <p>14&deg;</p>
+                    </div> -->
+
+                <!-- </div> -->
+
+            </div>
+
+        </div>
+    </body>
+
